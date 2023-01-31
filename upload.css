@@ -1,0 +1,139 @@
+*{
+  padding:0px;
+  margin:0;
+}
+.Navbar {
+  background-color: #004953;
+  opacity:90%;
+  
+  display: flex;
+  padding: 20px;
+  font-family: sans-serif;
+  color: white;
+}
+.Navbar__Link-brand{
+   font-family: "Audiowide", sans-serif;
+  padding-right:30px;
+  font-size:20px;
+}
+
+.Navbar__Link {
+  padding-right: 25px;
+
+}
+#nue{
+  
+  padding-left:30px;
+}
+.Navbar__Items {
+  
+  padding-top:5px;
+  display: flex;
+}
+
+.Navbar__Items--right {
+  margin-left:auto;
+}
+
+.Navbar__Link-toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .Navbar__Items,
+  .Navbar {
+    flex-direction: column;
+  }
+    
+.Navbar__Items {
+    display:none;
+  }
+    
+.Navbar__Items--right {
+    margin-left:0;
+  }
+    
+.Navbar__ToggleShow {
+    display: flex;
+  }
+    
+.Navbar__Link-toggle {
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+   } 
+}
+body{
+  background:url("https://i.insider.com/62e297eae1179200195eb918?width=1136&format=jpeg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+a{
+  text-decoration:none;
+  color:white;
+}
+
+#sign{
+  border-style:solid ;
+  border-radius:20px;
+  padding:7px;
+  background:white;
+  color:#004953;
+}
+
+.drag-area{
+  background:white;
+  opacity:85%;
+  border: 2px dashed #fff;
+  height: 400px;
+  width: 500px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top:7%;
+  margin-bottom:5%;
+}
+.drag-area.active{
+  border: 2px solid #004953;
+}
+.drag-area .icon{
+  font-size: 100px;
+  color: #004953;
+}
+.drag-area header{
+  font-size: 30px;
+  font-weight: 500;
+  color: #004953;
+}
+.drag-area span{
+  font-size: 25px;
+  font-weight: 500;
+  color: #004953;
+  margin: 10px 0 15px 0;
+}
+.drag-area button{
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  background: #004953;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.drag-area img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.sec
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

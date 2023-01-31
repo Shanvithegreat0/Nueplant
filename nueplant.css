@@ -1,0 +1,113 @@
+*{
+  padding:0px;
+  margin:0;
+}
+.Navbar {
+  background-color: #004953;
+  opacity:90%;
+  
+  display: flex;
+  padding: 20px;
+  font-family: sans-serif;
+  color: white;
+}
+.Navbar__Link-brand{
+   font-family: "Audiowide", sans-serif;
+  padding-right:30px;
+  font-size:20px;
+}
+
+.Navbar__Link {
+  padding-right: 25px;
+
+}
+#nue{
+  
+  padding-left:30px;
+}
+.Navbar__Items {
+  
+  padding-top:5px;
+  display: flex;
+}
+
+.Navbar__Items--right {
+  margin-left:auto;
+}
+
+.Navbar__Link-toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .Navbar__Items,
+  .Navbar {
+    flex-direction: column;
+  }
+    
+.Navbar__Items {
+    display:none;
+  }
+    
+.Navbar__Items--right {
+    margin-left:0;
+  }
+    
+.Navbar__ToggleShow {
+    display: flex;
+  }
+    
+.Navbar__Link-toggle {
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+   } 
+}
+body{
+  background:url("https://i.insider.com/62e297eae1179200195eb918?width=1136&format=jpeg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+a{
+  text-decoration:none;
+  color:white;
+}
+.drag
+{
+  color:white;
+  font-size:80px;
+  margin-top:150px;
+  margin-left:30px;
+ 
+}
+.des{
+  color:white;
+  font-size:20px;
+  margin-left:30px;
+}
+button{
+  padding:10px;
+  width:200px;
+  height:70px;
+  font-size:20px;
+  margin-top:150px;
+  margin-left:30px;
+  font-family: Garamond, serif;
+   border-radius: 50px;
+  border-width:0.1px;
+  background:#004953;
+  color:white;
+  border-color:#004953;
+  opacity:80%;
+  
+}
+#sign{
+  border-style:solid ;
+  border-radius:20px;
+  padding:7px;
+  background:white;
+  color:#004953;
+}
+
+

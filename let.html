@@ -1,0 +1,198 @@
+<html>
+<head>
+   <title>Open webcam using JavaScript.</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+   <style>
+     *{
+  padding:0px;
+  margin:0;
+}
+.Navbar {
+  background-color: #004953;
+  opacity:90%;
+  
+  display: flex;
+  padding: 20px;
+  font-family: sans-serif;
+  color: white;
+}
+.Navbar__Link-brand{
+   font-family: "Audiowide", sans-serif;
+  padding-right:30px;
+  font-size:20px;
+}
+
+.Navbar__Link {
+  padding-right: 25px;
+
+}
+#nue{
+  
+  padding-left:30px;
+}
+.Navbar__Items {
+  
+  padding-top:5px;
+  display: flex;
+}
+
+.Navbar__Items--right {
+  margin-left:auto;
+}
+
+.Navbar__Link-toggle {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .Navbar__Items,
+  .Navbar {
+    flex-direction: column;
+  }
+    
+.Navbar__Items {
+    display:none;
+  }
+    
+.Navbar__Items--right {
+    margin-left:0;
+  }
+    
+.Navbar__ToggleShow {
+    display: flex;
+  }
+    
+.Navbar__Link-toggle {
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+   } 
+}
+body{
+  background:url("https://i.insider.com/62e297eae1179200195eb918?width=1136&format=jpeg");
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+a{
+  text-decoration:none;
+  color:white;
+}
+
+#sign{
+  border-style:solid ;
+  border-radius:20px;
+  padding:7px;
+  background:white;
+  color:#004953;
+}
+      #videoCam {
+         width: 630px;
+         height: 300px;
+         margin-left: 0px;
+         border: 0.2px solid #004953;
+         background: white;
+      }
+h1{
+ color:#004953;
+height:50px;
+opacity:85%;
+border-radius:40px;
+padding:10px;
+width:500px;
+text-align:center;
+margin-top:5%;
+margin-left: 7%;
+       margin-right:7%;
+border-style:solid 0.2px;
+background:white;
+ 
+}
+      #startBtn {
+     background:#004953;
+  border:none;
+font-size:20px;
+  padding:20px;
+         margin-left: 27%;
+       margin-right:27%;
+margin-bottom:5%;
+         color:white;
+         cursor: pointer;
+         font-family: Garamond, serif;
+   border-radius: 50px;
+opacity:80%;
+      }
+      #startBtn:hover{
+         background-color: white;
+         color:#004953;
+      }
+.sect{
+ margin-left:27%;
+margin-right:27%
+  align-items: center;
+  justify-content: center;
+}
+   </style>
+</head>
+<body>
+<div class="Navbar">
+   <div class="Navbar__Link-brand">
+      Nueplant
+    </div>
+    <div class="Navbar__Link Navbar__Link-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+  <nav class="Navbar__Items">
+    <div class="Navbar__Link" id="nue"><a href="">
+      HOME</a>
+    </div>
+    <div class="Navbar__Link"><a href="">
+      About us</a>
+    </div>
+    <div class="Navbar__Link"><a href="">
+      Contact</a>
+    </div>
+  </nav>
+  <nav class="Navbar__Items Navbar__Items--right">
+    <div class="Navbar__Link" id="sign">
+      Sign Up
+    </div>
+  </nav>
+</div>
+<div class="sect">
+   <h1>Connect with external camera</h1>
+   <br/>
+   <video id="videoCam"></video>
+   <br/><br/>
+   <button id="startBtn" onclick="openCam()">Connect camera</button>
+</div>
+   <script>
+      function openCam(){
+         let All_mediaDevices=navigator.mediaDevices
+         if (!All_mediaDevices || !All_mediaDevices.getUserMedia) {
+            console.log("getUserMedia() not supported.");
+            return;
+         }
+         All_mediaDevices.getUserMedia({
+            audio: true,
+            video: true
+         })
+         .then(function(vidStream) {
+            var video = document.getElementById('videoCam');
+            if ("srcObject" in video) {
+               video.srcObject = vidStream;
+            } else {
+               video.src = window.URL.createObjectURL(vidStream);
+            }
+            video.onloadedmetadata = function(e) {
+               video.play();
+            };
+         })
+         .catch(function(e) {
+            console.log(e.name + ": " + e.message);
+         });
+      }
+   </script> 
+</body>
+</html>
